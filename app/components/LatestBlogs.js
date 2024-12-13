@@ -13,7 +13,7 @@ const LatestBlogs = () => {
           <BlogCard/>
         </div>
 
-        <button className="relative border-b-4 px-7 py-3 w-[300px] shadow-xl text-center text-greenTitle font-semibold rounded-full border-2 border-black ">
+        <button className="mt-4 relative border-b-8 px-7 py-3 w-[300px] shadow-xl text-center text-greenTitle font-semibold rounded-full border-2 border-black ">
   View All Blogs
 </button>
 
