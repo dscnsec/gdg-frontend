@@ -10,7 +10,11 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        greenTitle :"#109D58",
       },
+    },
+    fontFamily: {
+      sans: [ "Noto Sans Display", 'sans-serif'], // Add the font here
     },
   },
   plugins: [],
