@@ -1,10 +1,11 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import landingRight from "../public/landingRight.png";
 import landingLeft from "../public/landingLeft.png";
+import Link from "next/link";
 
 const OurTeam = () => {
-  return <div>Our Team</div>;
   return (
     // Main Container
     <div className="flex flex-col items-center gap-1">
@@ -79,9 +80,11 @@ const OurTeam = () => {
       </div>
 
       {/* Full team button */}
-      <button className="mt-8 sm:mt-10 lg:mt-12 relative border-b-8 px-7 py-3 hover:shadow-2xl hover:-translate-y-2 active:translate-y-0 active:shadow-lg transform transition duration-200 ease-in-out text-center text-blue-600 font-bold rounded-full border-2 border-black items-center justify-center w-[300px] hover:bg-amber-200">
-        View Full Team
-      </button>
+      <Link href="/team">
+        <button className="mt-8 sm:mt-10 lg:mt-12 relative border-b-8 px-7 py-3 hover:shadow-2xl hover:-translate-y-2 active:translate-y-0 active:shadow-lg transform transition duration-200 ease-in-out text-center text-blue-600 font-bold rounded-full border-2 border-black items-center justify-center w-[300px] hover:bg-amber-200">
+          View Full Team
+        </button>
+      </Link>
     </div>
   );
 };
