@@ -4,7 +4,6 @@ import landingRight from "../public/landingRight.png";
 import landingLeft from "../public/landingLeft.png";
 
 const OurTeam = () => {
-  return <div>Our Team</div>;
   return (
     // Main Container
     <div className="flex flex-col items-center gap-1">
