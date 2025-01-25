@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between shadow-md w-full p-4 bg-white fixed top-0 z-50">
+      <nav className="flex items-center justify-between shadow-md w-full p-4 bg-white fixed top-0 z-50 mb-4">
         {/* LOGO+TITLE */}
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -70,6 +70,11 @@ const Navbar = () => {
 
       {/* Sidebar */}
       <Sidebar show={showSidebar} setShow={setShowSidebar} />
+
+      {/* Main content should have top padding */}
+      <div className="pt-20"> {/* Adjust this value based on navbar height */}
+        {/* Your page content here */}
+      </div>
     </>
   );
 };

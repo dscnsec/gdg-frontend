@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
+import BellLogo from "../../public/fi-br-bell-ring.png";
+import Image from 'next/image';
 
 const Sidebar = ({ show, setShow }) => {
     return (
@@ -18,18 +20,27 @@ const Sidebar = ({ show, setShow }) => {
             </div>
 
             {/* Sidebar Links */}
-            <Link href="/events" className="font-semibold hover:text-blue-500">
+            <Link href="/events" className="font-semibold text-lg hover:text-blue-500">
                 EVENTS
             </Link>
-            <Link href="/team" className="font-semibold hover:text-blue-500">
+            <Link href="/team" className="font-semibold text-lg hover:text-blue-500">
                 TEAM
             </Link>
-            <Link href="/blogs" className="font-semibold hover:text-blue-500">
+            <Link href="/blogs" className="font-semibold text-lg hover:text-blue-500">
                 BLOGS
             </Link>
-            <Link href="/about" className="font-semibold hover:text-blue-500">
+            <Link href="/about" className="font-semibold text-lg hover:text-blue-500">
                 ABOUT
             </Link>
+
+            {/* Notifications (Desktop) */}
+            <div className="outline outline-yellow-300 outline-4 p-4 w-fit mx-auto rounded-full">
+                <Image
+                    className="object-contain w-6 h-6"
+                    src={BellLogo}
+                    alt="bell-logo"
+                />
+            </div>
         </div>
     );
 };
