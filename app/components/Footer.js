@@ -21,9 +21,9 @@ const Footer = () => {
                             className="object-contain h-28 w-16 md:h-[192px] md:w-[113px]"
                             alt="GDG logo"
                         />
-                        <div className="font-bold text-3xl md:text-4xl">
+                        <div className="font-bold text-3xl">
                             <h1>GDG</h1>
-                            <h1>NSEC</h1>
+                            <h1>onCampus</h1>
                         </div>
                     </div>
 

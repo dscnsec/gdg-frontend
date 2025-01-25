@@ -28,7 +28,7 @@ const Navbar = () => {
             className="object-contain w-10 h-10"
             alt="GDG logo"
           />
-          <h1 className="font-bold text-2xl md:text-lg">GDG NSEC</h1>
+          <h1 className="font-bold text-2xl md:text-lg">GDG onCampus</h1>
         </Link>
 
         {/* Hamburger Menu (Mobile) */}
