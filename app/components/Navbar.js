@@ -1,13 +1,26 @@
-import React from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import GDGLOGO from "../../public/GDG_LOGO.png";
 import BellLogo from "../../public/fi-br-bell-ring.png";
 import Image from 'next/image';
 import Link from 'next/link';
+import { GiHamburgerMenu } from "react-icons/gi";
+import Sidebar from './Sidebar';
 
 const Navbar = () => {
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  useEffect(() => {
+    if (showSidebar) {
+      document.body.style.overflow = 'hidden'; // Disable scroll
+    } else {
+      document.body.style.overflow = ''; // Re-enable scroll
+    }
+  }, [showSidebar]);
+
   return (
     <>
-      <div className="flex items-center justify-between shadow-md w-full p-4 bg-white">
+      <nav className="flex items-center justify-between shadow-md w-full p-4 bg-white fixed top-0 z-50 mb-4">
         {/* LOGO+TITLE */}
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -15,11 +28,19 @@ const Navbar = () => {
             className="object-contain w-10 h-10"
             alt="GDG logo"
           />
-          <h1 className="font-bold text-lg">GDG NSEC</h1>
+          <h1 className="font-bold text-2xl md:text-lg">GDG onCampus</h1>
         </Link>
 
-        {/* Navigation Links */}
-        <div className="flex flex-1 justify-center gap-8">
+        {/* Hamburger Menu (Mobile) */}
+        <div
+          onClick={() => setShowSidebar((prev) => !prev)}
+          className="md:hidden cursor-pointer"
+        >
+          <GiHamburgerMenu size={24} />
+        </div>
+
+        {/* Navigation Links (Desktop) */}
+        <div className="hidden md:flex flex-1 justify-center gap-8">
           <Link href="/events" className="font-semibold hover:text-blue-500">
             EVENTS
           </Link>
@@ -34,16 +55,26 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Notifications */}
-        <div className="outline outline-yellow-300 outline-3 p-4  rounded-full flex items-center">
+        {/* Notifications (Desktop) */}
+        <div className="hidden outline outline-yellow-300 outline-3 p-2 rounded-full md:flex items-center">
           <Image
-            className="object-contain size-5"
+            className="object-contain w-6 h-6"
             src={BellLogo}
             alt="bell-logo"
           />
         </div>
+      </nav>
+
+      {/* Horizontal Divider */}
+      <hr className="w-full drop-shadow-[0px_2px_0px_rgba(0,0,0,1)] fixed top-16 z-40" />
+
+      {/* Sidebar */}
+      <Sidebar show={showSidebar} setShow={setShowSidebar} />
+
+      {/* Main content should have top padding */}
+      <div className="pt-20"> {/* Adjust this value based on navbar height */}
+        {/* Your page content here */}
       </div>
-      <hr className="w-full drop-shadow-[0px_2px_0px_rgba(0,0,0,1)]" />
     </>
   );
 };

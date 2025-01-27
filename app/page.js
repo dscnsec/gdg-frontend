@@ -7,7 +7,7 @@ import WhatDoWeDo from "./components/WhatDoWeDo";
 
 export default function Home() {
   return (
-    <div>
+    <div className="w-full">
       <Hero />
       <WhatDoWeDo />
       <Timeline />
