@@ -28,7 +28,9 @@ const Navbar = () => {
             className="object-contain w-10 h-10"
             alt="GDG logo"
           />
-          <h1 className="font-bold text-2xl md:text-lg">GDG onCampus</h1>
+          <h1 className="font-bold text-2xl max-xl:text-xl max-md:text-lg ">
+            GDG onCampus NSEC
+          </h1>
         </Link>
 
         {/* Hamburger Menu (Mobile) */}
@@ -72,7 +74,9 @@ const Navbar = () => {
       <Sidebar show={showSidebar} setShow={setShowSidebar} />
 
       {/* Main content should have top padding */}
-      <div className="pt-20"> {/* Adjust this value based on navbar height */}
+      <div className="pt-20">
+        {" "}
+        {/* Adjust this value based on navbar height */}
         {/* Your page content here */}
       </div>
     </>
