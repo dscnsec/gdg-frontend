@@ -32,7 +32,7 @@ const Teampage = () => {
         {domains.map((domain) => (
           <button
             key={domain.id}
-            onClick={() => setSelectedDomain(domain.id)}
+            //onClick={() => setSelectedDomain(domain.id)}
             className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
               selectedDomain === domain.id
                 ? "bg-black text-white"

@@ -19,7 +19,7 @@ const Hero = () => {
           <br /> with Google Developers Group
         </h1>
         <p
-          className="mt-4 font-normal text-center text-lg md:text-2xl lg:text-[32px] w-full max-w-screen-lg"
+          className="mt-8 font-normal text-center text-lg md:text-2xl lg:text-[32px] w-full max-w-screen-lg"
           style={notoSansDisplay.style}
         >
           The heart of innovation and technology at
