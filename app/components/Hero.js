@@ -1,10 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import { Noto_Sans_Display } from 'next/font/google';
+import Link from "next/link";
 
 const notoSansDisplay = Noto_Sans_Display({
-  subsets: ['latin'],
-  display: 'swap',
+  subsets: ["latin"],
+  display: "swap",
 });
 
 const Hero = () => {
@@ -23,9 +24,12 @@ const Hero = () => {
           style={notoSansDisplay.style}
         >
           The heart of innovation and technology at
-          <span className="font-extrabold"> Netaji Subhash Engineering College</span>.
-          Collaborate with like-minded peers, explore cutting-edge Google technologies, and
-          create solutions for tomorrow.
+          <span className="font-extrabold">
+            {" "}
+            Netaji Subhash Engineering College
+          </span>
+          . Collaborate with like-minded peers, explore cutting-edge Google
+          technologies, and create solutions for tomorrow.
         </p>
       </div>
 
@@ -40,18 +44,22 @@ const Hero = () => {
         />
 
         <div className="mx-auto text-center flex flex-col justify-center items-center gap-5">
-          <button
-            className="w-full md:w-72 py-3 px-7 bg-[#4385F3] border-4 border-[#000000] gap-2.5 rounded-[50px] shadow-lg drop-shadow-lg shadow-black text-white font-bold leading-10 text-lg md:text-4xl"
-            style={notoSansDisplay.style}
-          >
-            Join Us
-          </button>
-          <button
-            className="w-full md:w-96 py-3 px-7 bg-white border-4 border-black rounded-[50px] shadow-lg drop-shadow-lg shadow-black text-[#4385F3] font-bold text-lg md:text-xl"
-            style={notoSansDisplay.style}
-          >
-            Explore Upcoming Events
-          </button>
+          <Link href={"/"}>
+            <button
+              className="w-full md:w-72 py-3 px-7 bg-[#4385F3] border-4 border-[#000000] gap-2.5 rounded-[50px] shadow-lg drop-shadow-lg shadow-black text-white font-bold leading-10 text-lg md:text-4xl  hover:-translate-y-2 active:translate-y-0 active:shadow-lg transform transition duration-200 ease-in-out"
+              style={notoSansDisplay.style}
+            >
+              Join Us
+            </button>
+          </Link>
+          <Link href={"/events"}>
+            <button
+              className="w-full md:w-96 py-3 px-7 bg-white border-4 border-black rounded-[50px] shadow-lg drop-shadow-lg shadow-black text-[#4385F3] font-bold text-lg md:text-xl  hover:-translate-y-2 active:translate-y-0 active:shadow-lg transform transition duration-200 ease-in-out"
+              style={notoSansDisplay.style}
+            >
+              Explore Upcoming Events
+            </button>
+          </Link>
         </div>
 
         <Image

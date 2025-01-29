@@ -1,6 +1,6 @@
 import React from "react";
-import TeamCard from "./TeamCard";
 import SecondaryButton from "./SecondaryButton";
+import Link from "next/link";
 
 const WhatDoWeDo = () => {
   return (
@@ -63,7 +63,7 @@ const WhatDoWeDo = () => {
       </div>
 
       <div className="w-[75vw] h-[17vw] grid grid-cols-3 grid-rows-1 gap-6 mt-8 mb-16 max-lg:mt-6 max-lg:mb-12 max-[650px]:grid-rows-3 max-[650px]:grid-cols-1 max-[650px]:w-[250px] max-[650px]:h-[768px] max-[450px]:w-[200px] max-[450px]:h-[618px]">
-        <TeamCard>
+        <Card>
           <div className="w-1/2 h-auto">
             <svg
               viewBox="0 0 189 161"
@@ -131,8 +131,8 @@ const WhatDoWeDo = () => {
           <p className="text-4xl font-bold leading-[44px] pt-2 text-[#34A853] max-xl:text-3xl max-lg:text-2xl max-md:text-xl">
             Hackathons
           </p>
-        </TeamCard>
-        <TeamCard>
+        </Card>
+        <Card>
           <div className="w-1/2 h-auto">
             <svg
               viewBox="0 0 157 167"
@@ -152,20 +152,21 @@ const WhatDoWeDo = () => {
           <p className="text-4xl font-bold leading-[44px] pb-2 text-[#34A853] max-xl:text-3xl max-lg:text-2xl max-md:text-xl">
             Study Jams
           </p>
-        </TeamCard>
-        <TeamCard>
+        </Card>
+        <Card>
           <div className="text-7xl font-bold text-[#34A853] max-xl:text-6xl max-lg:text-[2.5rem]">
             <p>and</p>
             <p>more.</p>
           </div>
-        </TeamCard>
+        </Card>
       </div>
-
-      <SecondaryButton
-        text={"Explore Upcoming Events"}
-        textColor="#34A853"
-        className="max-xl:text-3xl max-lg:text-2xl max-md:text-xl"
-      />
+      <Link href={"/events"}>
+        <SecondaryButton
+          text={"Explore Upcoming Events"}
+          textColor="#34A853"
+          className="max-xl:text-3xl max-lg:text-2xl max-md:text-xl"
+        />
+      </Link>
 
       {/* bottom-Left corner illustration */}
       <div className="w-full pl-[13vw] pr-[10vw] mt-10 flex items-center justify-between max-lg:mt-6 max-md:w-[600px] max-md:px-0 max-sm:w-[107vw] max-[400px]:w-[115vw]">
@@ -274,3 +275,11 @@ const WhatDoWeDo = () => {
 };
 
 export default WhatDoWeDo;
+
+const Card = ({ children }) => {
+  return (
+    <div className="border-black border-4 shadow-[0_6px] rounded-2xl flex flex-col justify-center items-center hover:bg-[#FDE293] transition-colors ease-out duration-500">
+      {children}
+    </div>
+  );
+};
