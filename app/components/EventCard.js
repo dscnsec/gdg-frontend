@@ -6,31 +6,38 @@ const EventCard = () => {
   const events = [
     {
       name: "INTRODUCTION TO OPEN SOURCE",
-      status: "today",
+      status: "TODAY",
     },
     {
       name: "GIT & GITHUB WORKSHOP",
-      status: "upcoming",
+      status: "UPCOMING",
     },
     {
-      name: "HACKTOBERFEST CONTRIBUTION DRIVE",
-      status: "upcoming",
+      name: "GIT & GITHUB WORKSHOP",
+      status: "UPCOMING",
     },
     {
-      name: "OPEN SOURCE PROJECT SHOWCASE",
-      status: "upcoming",
-    },
-    {
-      name: "BEGINNER'S GUIDE TO CONTRIBUTING",
-      status: "ended",
-    },
-    {
-      name: "COLLABORATIVE CODING SPRINT",
-      status: "ended",
+      name: "INTRODUCTION TO OPEN SOURCE",
+      status: "ENDED",
     },
   ];
+
+  //Function to change color of button according to event status
+  const getStatusStyles = (status) => {
+    switch (status) {
+      case "TODAY":
+        return "bg-[#FDE293] border-[#FABC05]"; // Yellow for TODAY
+      case "UPCOMING":
+        return "bg-[#A8DAB5] border-[#34A853]"; // Green for UPCOMING
+      case "ENDED":
+        return "bg-[#F6AEA9] border-[#EA4335]"; // Red for ENDED
+      default:
+        return "bg-gray-200 border-gray-400";
+    }
+  };
+
   return (
-    <div>
+    <div className="flex flex-wrap justify-center gap-4">
       {events.map((event) => (
         <div className="relative w-[600px] h-[500px] mt-5 rounded-[32px] border-4 border-black shadow-[0_12px_0_0_#000000]">
           {/* Upper div with image */}
@@ -44,11 +51,14 @@ const EventCard = () => {
 
             {/* Button container */}
             <div className="flex items-center justify-between mt-4">
-              {/* Today button */}
-              <button className="px-3 py-2 bg-[#FDE293] border-2 border-dotted border-[#FABC05] rounded-[50px] text-sm font-medium">
+              {/* Status button */}
+              <button
+                className={`px-3 py-2 border-2 border-dotted rounded-[50px] text-sm font-medium ${getStatusStyles(
+                  event.status
+                )}`}
+              >
                 {event.status}
               </button>
-
               {/* Register button */}
               <button className="px-4 py-3 bg-[#4385F3] text-white rounded-[50px] text-sm font-medium">
                 Register Now

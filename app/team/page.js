@@ -24,9 +24,13 @@ const Teampage = () => {
   return (
     <div className="container mx-auto px-4 max-w-7xl">
       {/* Heading */}
-      <h1 className="font-bold text-center text-2xl md:text-3xl pb-16">
-        Meet the Team behind GDG NSEC
-      </h1>
+      <div class="text-center">
+        <h1 class="text-4xl font-bold leading-tight pb-10">
+          Meet
+          <span class="inline-block bg-yellow-200 px-4 py-2">the Team</span>
+          behind GDG NSEC
+        </h1>
+      </div>
 
       <div className="flex flex-wrap justify-center gap-4 mb-12">
         {domains.map((domain) => (
