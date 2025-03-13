@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="flex items-center justify-between shadow-md w-full p-4 bg-white fixed top-0 z-50 mb-4">
+      <nav className="md:px-8 grid grid-cols-3 max-md:grid-cols-2 items-center justify-between shadow-md w-full p-4 bg-white fixed top-0 z-50 mb-4">
         {/* LOGO+TITLE */}
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -28,7 +28,7 @@ const Navbar = () => {
             className="object-contain w-10 h-10"
             alt="GDG logo"
           />
-          <h1 className="font-bold text-2xl max-xl:text-xl max-md:text-lg ">
+          <h1 className="font-bold text-2xl  max-xl:text-xl max-md:text-base max-sm:text-xs ">
             GDG onCampus NSEC
           </h1>
         </Link>
@@ -36,7 +36,7 @@ const Navbar = () => {
         {/* Hamburger Menu (Mobile) */}
         <div
           onClick={() => setShowSidebar((prev) => !prev)}
-          className="md:hidden cursor-pointer"
+          className="md:hidden cursor-pointer flex justify-end"
         >
           <GiHamburgerMenu size={24} />
         </div>
@@ -58,12 +58,14 @@ const Navbar = () => {
         </div>
 
         {/* Notifications (Desktop) */}
-        <div className="hidden outline outline-yellow-300 outline-3 p-2 rounded-full md:flex items-center">
-          <Image
-            className="object-contain w-6 h-6"
-            src={BellLogo}
-            alt="bell-logo"
-          />
+        <div className="hidden md:flex w-full items-end justify-end ">
+          <div className="w-fit outline-yellow-300 rounded-full  outline outline-3 p-2">
+            <Image
+              className="object-contain w-6 h-6"
+              src={BellLogo}
+              alt="bell-logo"
+            />
+          </div>
         </div>
       </nav>
 

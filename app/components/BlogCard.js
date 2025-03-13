@@ -1,3 +1,4 @@
+import BlogImage from "../public/BlogImage.png";
 import Image from "next/image";
 const BlogCard = () => {
   return (
@@ -5,10 +6,8 @@ const BlogCard = () => {
       {/* img */}
       <Image
         className="w-full h-48 object-cover rounded-lg rounded-t-3xl  "
-        src="https://s3-alpha-sig.figma.com/img/1bbf/3a53/303668a9bfd0503050e1c33e0106e708?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=aEOyvNWY9kLgyeHt4qKXdzt0Lk0Sch4dd-j8NXI9q4F~4nspJgWTYKb9tAjEt1WeQq5T0NuqPiWN2jiHPaKdo8BHvtFj3XAFL01qU-oNwNcU65mO5hJ0sCQGOowx05A3amiJeKVYwVR6-uFw9I3cooA3DJBTE1a6K6lYytOODelg-9FRjPSCnTSHkoNA7EkxZWq1AlfeWPEeg0ZS6LluR8kRof3YREguMGyaOTw8DhEhOGvEczT7n0kkyikzy7DIk28tS1cmMZIbFP7ZonayfRyjDsFQdMzWreStSQ7n2BYO3w2~l1~YKdDrhT18-CV64PfOJlMFXemiEXP5d5pcbg"
-        alt="Blog thumbnail"
-        width={100}
-        height={100}
+        src={BlogImage}
+        alt="blog"
       />
 
       {/* Text In between */}

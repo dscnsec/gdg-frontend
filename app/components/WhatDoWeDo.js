@@ -160,11 +160,11 @@ const WhatDoWeDo = () => {
           </div>
         </Card>
       </div>
-      <Link href={"/events"}>
+      <Link href={"/events"} className="w-full flex justify-center pt-4">
         <SecondaryButton
           text={"Explore Upcoming Events"}
           textColor="#34A853"
-          className="max-xl:text-3xl max-lg:text-2xl max-md:text-xl"
+          className=" max-xl:text-3xl max-lg:text-2xl max-md:text-xl max-w-[662px] max-lg:w-fit w-full "
         />
       </Link>
 
